@@ -6,11 +6,41 @@
     "type": "git",
     "url": "git+https://github.com/alanleite/regantt.git"
   },
-  "keywords": ["react", "gantt", "chart"],
+  "keywords": [
+    "react",
+    "gantt",
+    "chart"
+  ],
   "author": "Alan Leite",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alanleite/regantt/issues"
   },
-  "homepage": "https://github.com/alanleite/regantt#readme"
+  "homepage": "https://github.com/alanleite/regantt#readme",
+  "main": "lib/prod.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run release",
+    "release": "npm run build:dev && npm run build:prod",
+    "build:prod": "NODE_ENV=production rollup -c",
+    "build:dev": "NODE_ENV=development rollup -c"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-react": "^6.24.1",
+    "rollup": "^0.66.2",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-replace": "^2.0.0"
+  },
+  "peerDependencies": {
+    "react": ">= 16.3.x",
+    "styled-components": ">= 3.4.x"
+  }
 }
