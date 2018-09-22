@@ -1,6 +1,6 @@
 {
   "name": "regantt",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A React Gantt Chart",
   "repository": {
     "type": "git",
