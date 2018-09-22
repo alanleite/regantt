@@ -1,0 +1,16 @@
+{
+  "name": "regantt",
+  "version": "0.0.0",
+  "description": "A React Gantt Chart",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanleite/regantt.git"
+  },
+  "keywords": ["react", "gantt", "chart"],
+  "author": "Alan Leite",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alanleite/regantt/issues"
+  },
+  "homepage": "https://github.com/alanleite/regantt#readme"
+}
