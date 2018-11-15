@@ -26,13 +26,15 @@
     "prepublishOnly": "npm run release",
     "release": "npm run build:dev && npm run build:prod",
     "build:prod": "NODE_ENV=production rollup -c",
-    "build:dev": "NODE_ENV=development rollup -c"
+    "build:dev": "NODE_ENV=development rollup -c",
+    "watch": "NODE_ENV=development rollup -c -w"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-react": "^6.24.1",
+    "prettier-standard": "^8.0.1",
     "rollup": "^0.66.2",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.8",
@@ -40,7 +42,11 @@
     "rollup-plugin-replace": "^2.0.0"
   },
   "peerDependencies": {
-    "react": ">= 16.3.x",
-    "styled-components": ">= 3.4.x"
+    "react": "^16.6.3",
+    "styled-components": "^4.1.1"
+  },
+  "dependencies": {
+    "react": "^16.6.3",
+    "styled-components": "^4.1.1"
   }
 }
