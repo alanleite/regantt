@@ -58,6 +58,10 @@ const GanttBodyBase = styled.div`
     flex-grow: 1;
     border-right: 1px solid lightgray;
   }
+  .grid .col .period.nowork {
+    background-color: floralwhite;
+    z-index: 1;
+  }
   .col-filler {
     flex-grow: 1;
     background-color: white;
@@ -104,6 +108,9 @@ const GanttTask = styled.div`
 `
 
 class Gantt extends React.Component {
+  isWorkday (d) {
+    return !(d.wd === 0 || d.wd === 6)
+  }
   render () {
     const columns = this.props.columns || []
     const tasks = this.props.tasks
@@ -123,10 +130,10 @@ class Gantt extends React.Component {
               ))}
             </div>
             <div className='grid'>
-              {columns.days.map((day, i) => (
+              {columns.days.map((dayInfo, i) => (
                 <div key={i} className='col'>
-                  <div className='header'>{day}</div>
-                  <div className='period' />
+                  <div className='header'>{dayInfo.day}</div>
+                  <div className={'period ' + (!this.isWorkday(dayInfo) ? 'nowork' : '') } />
                 </div>
               ))}
               <div className='col-filler' />
@@ -141,6 +148,7 @@ class Gantt extends React.Component {
                 top={task.offsetY}
                 width={task.fx - task.ix}
                 left={task.fx}
+                style={task.style}
                 className={task.class}
               />
             ))}

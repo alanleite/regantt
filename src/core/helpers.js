@@ -58,7 +58,7 @@ const makeColumns = (groups, data) => {
       m[current.month]++
     }
     s[current.sd] = index
-    d.push(current.day)
+    d.push(current)
     current = vDate(addDays(current.date, 1))
     index++
   }
