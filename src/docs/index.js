@@ -59,6 +59,7 @@ const data = {
 
 const App = () => (
   <Container>
+    <p>This is a basic example.</p>
     <Gantt
       data={data}
       onHeaderGroupClick={(a) => {
