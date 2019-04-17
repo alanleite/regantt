@@ -17,36 +17,38 @@
     "url": "https://github.com/alanleite/regantt/issues"
   },
   "homepage": "https://github.com/alanleite/regantt#readme",
-  "main": "lib/prod.js",
+  "main": "lib/regantt.js",
   "files": [
     "lib",
     "src"
   ],
   "scripts": {
     "prepublishOnly": "npm run release",
-    "release": "npm run build:dev && npm run build:prod",
-    "build:prod": "NODE_ENV=production rollup -c",
-    "build:dev": "NODE_ENV=development rollup -c",
-    "watch": "NODE_ENV=development rollup -c -w"
+    "release": "NODE_ENV=production npm run build",
+    "build": "webpack --config config/webpack.config.js",
+    "build:docs": "webpack --config config/webpack.docs.config.js",
+    "watch": "webpack --watch --config config/webpack.config.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
     "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-react": "^6.24.1",
-    "prettier-standard": "^8.0.1",
-    "rollup": "^0.66.2",
-    "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-commonjs": "^9.1.8",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-replace": "^2.0.0"
+    "standard": "^12.0.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-node-externals": "^1.7.2"
   },
   "peerDependencies": {
     "react": "^16.6.3",
     "styled-components": "^4.1.1"
   },
   "dependencies": {
-    "react": "^16.6.3",
-    "styled-components": "^4.1.1"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
   }
 }

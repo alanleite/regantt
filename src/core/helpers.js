@@ -47,8 +47,11 @@ const makeColumns = (groups, data) => {
   const to = vDate(data.to)
   let current = vDate(data.from)
   let index = 0
+  // total de dias para cada mes 'month': size
   const m = {}
+  // posição dos dias [] = { day, month, year, wd, sd, data }
   const d = []
+  // para cada dia.. do from até to... 'token_do_dia_e_mes(sd)': position da coluna
   const s = {}
 
   while (current && current.date <= to.date) {
