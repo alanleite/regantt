@@ -1,19 +1,19 @@
 const _months = {
-  0: 'Janeiro',
-  1: 'Fevereiro',
-  2: 'Março',
-  3: 'Abril',
-  4: 'Maio',
-  5: 'Junho',
-  6: 'Julho',
-  7: 'Agosto',
-  8: 'Setembro',
-  9: 'Outubro',
-  10: 'Novembro',
-  11: 'Dezembro'
+  0: 'January',
+  1: 'February',
+  2: 'March',
+  3: 'April',
+  4: 'May',
+  5: 'June',
+  6: 'July',
+  7: 'August',
+  8: 'September',
+  9: 'October',
+  10: 'November',
+  11: 'December'
 }
 
-const vDate = date => {
+export const vDate = date => {
   let obj = date
   if (typeof obj === 'string') {
     obj = new Date(date)
@@ -28,13 +28,13 @@ const vDate = date => {
   }
 }
 
-const addDays = function (date, days) {
+export const addDays = function (date, days) {
   var rDate = new Date(date.valueOf())
   rDate.setDate(rDate.getDate() + days)
   return rDate
 }
 
-const distinctGroups = data => {
+export const distinctGroups = data => {
   return data.rows
     .reduce(
       (acc, r) => (acc.includes(r.group) ? acc : [].concat(acc, r.group)),
@@ -43,7 +43,7 @@ const distinctGroups = data => {
     .sort((a, b) => (a > b ? 1 : -1))
 }
 
-const makeColumns = (groups, data) => {
+export const makeColumns = (groups, data) => {
   const to = vDate(data.to)
   let current = vDate(data.from)
   let index = 0
@@ -76,7 +76,7 @@ const makeColumns = (groups, data) => {
   }
 }
 
-const generateTaskClass = (taskIndex, parentTasksCount) => {
+export const generateTaskClass = (taskIndex, parentTasksCount) => {
   switch (parentTasksCount) {
     case 1:
       return 'task'
@@ -87,7 +87,7 @@ const generateTaskClass = (taskIndex, parentTasksCount) => {
   }
 }
 
-const makeData = (groups, columns, data) => {
+export const makeData = (groups, columns, data) => {
   const values = groups.map(group => {
     const rows = data.rows.filter(p => p.group === group)
 
