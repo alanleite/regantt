@@ -121,7 +121,8 @@ test('Make data', () => {
     to: '2020-05-20T10:00:00.000Z',
     rows: [
       {
-        column: 'Group A'
+        column: 'Group A',
+        data: { message: 'hello!' }
       }
     ]
   }
@@ -273,5 +274,7 @@ test('Make data', () => {
     }
   }
 
-  // const result = makeData(groups, columns, data)
+  const result = makeData(groups, columns, data)
+
+  console.log(result)
 })

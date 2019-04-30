@@ -33,6 +33,7 @@ const GanttTreeGroupCol = styled.div`
   display: flex;
   align-items: center;
   padding: 4px 8px;
+  cursor: pointer;
 `
 
 const GanttTree = ({
@@ -47,20 +48,20 @@ const GanttTree = ({
         <div key={i}>
           <GanttTreeGroupHeader
             onClick={() => {
-              onHeaderGroupClick(g)
+              onHeaderGroupClick(g.group)
             }}>
             {g.group}
           </GanttTreeGroupHeader>
-          {g.data.map((r, i) => (
+          {g.data.map(({ tableData, data }, i) => (
             <GanttTreeGroupRow key={i}>
-              {r.map((c, i) => (
+              {tableData.map((tableFields, i) => (
                 <GanttTreeGroupCol
                   key={i}
-                  style={{ width: c.width || 150 }}
+                  style={{ width: tableFields.width || 150 }}
                   onClick={() => {
-                    onHeaderTaskClick(g, r, c)
+                    onHeaderTaskClick(data || null)
                   }}>
-                  {c.name}
+                  {tableFields.name}
                 </GanttTreeGroupCol>
               ))}
             </GanttTreeGroupRow>

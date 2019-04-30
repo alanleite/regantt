@@ -12,6 +12,7 @@ const data = {
   rows: [
     {
       group: 'Project A',
+      data: { message: 'Hellow!' },
       column: {
         name: { name: 'Task 1', width: 240 },
         user: { name: 'Jonny', width: 150 },
@@ -68,11 +69,11 @@ const data = {
 const Example = () => (
   <Gantt
     data={data}
-    onHeaderGroupClick={(a) => {
-      console.log('onHeaderGroupClick', a)
+    onHeaderGroupClick={(groupName) => {
+      console.log('onHeaderGroupClick', groupName)
     }}
-    onHeaderTaskClick={(a, b, c) => {
-      console.log('onHeaderTaskClick', { a, b, c })
+    onHeaderTaskClick={(data) => {
+      console.log('onHeaderTaskClick', data)
     }}
     onTaskClick={(a) => {
       console.log('onTaskClick', a)

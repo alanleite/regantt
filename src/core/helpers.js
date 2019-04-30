@@ -87,18 +87,16 @@ export const generateTaskClass = (taskIndex, parentTasksCount) => {
   }
 }
 
-export const makeData = (groups, columns, data) => {
+export const makeData = (groups, columns, input) => {
   const values = groups.map(group => {
-    const rows = data.rows.filter(p => p.group === group)
+    const rows = input.rows.filter(p => p.group === group)
 
-    const rowData = rows.map(p =>
-      Object.values(p.column).map(s => {
-        if (typeof s === 'string') {
-          return { name: s }
-        }
-        return s
-      })
-    )
+    const data = rows.map(({ column, data }) => ({
+      tableData: Object
+        .values(column)
+        .map(s => (typeof s === 'string') ? ({ name: s }) : s),
+      data
+    }))
 
     const tasks = rows.map((p, i) => {
       if (!p.tasks || p.tasks.length === 0) return []
@@ -117,7 +115,7 @@ export const makeData = (groups, columns, data) => {
 
     return {
       group,
-      data: rowData,
+      data,
       tasks
     }
   })

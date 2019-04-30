@@ -4,6 +4,7 @@ const env = process.env.NODE_ENV || 'development'
 
 module.exports = {
   entry: './src/docs/index.js',
+  target: 'web',
   mode: env,
   output: {
     path: path.resolve(__dirname, '../docs'),
@@ -14,7 +15,7 @@ module.exports = {
       {
         test: /\.js|jsx?$/,
         use: {
-          loader: 'babel-loader',
+          loader: 'babel-loader'
         },
         exclude: /node_modules/
       }
