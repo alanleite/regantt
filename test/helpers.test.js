@@ -276,5 +276,4 @@ test('Make data', () => {
 
   const result = makeData(groups, columns, data)
 
-  console.log(result)
 })
