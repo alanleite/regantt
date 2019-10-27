@@ -42,7 +42,6 @@ const Gantt = ({
   onTaskClick
 }) => {
   const baseData = calculate(data)
-  console.log(baseData)
   const tasks = calculateTasks(baseData)
   if (!baseData) return null
   return (

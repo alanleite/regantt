@@ -30,7 +30,7 @@ test('Should convert a text date to useful parameters', () => {
     .toBe((new Date(date)).toString())
 })
 
-test('Should clone a date ang add days', () => {
+test('Should clone a date and add days', () => {
   const date = new Date('2020-05-01T10:00:00.000Z')
   const result = addDays(date, 5)
   expect(result.toISOString()).toBe('2020-05-06T10:00:00.000Z')
@@ -84,12 +84,6 @@ test('Should create period props to help building UI', () => {
   expect(result.sign['Mon Jun 01 2020']).toBe(31)
   expect(result.sign['Tue Jun 02 2020']).toBe(32)
   expect(result.sign['Thu Aug 20 2020']).toBe(111)
-})
-
-test('Should clone a date ang add days', () => {
-  const date = new Date('2020-05-01T10:00:00.000Z')
-  const result = addDays(date, 5)
-  expect(result.toISOString()).toBe('2020-05-06T10:00:00.000Z')
 })
 
 test('Should get css class for only task', () => {
@@ -317,5 +311,4 @@ test('Make data', () => {
 
   const result = makeData(groups, columns, data)
 
-  console.log(result)
 })
