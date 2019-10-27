@@ -1,6 +1,6 @@
 {
   "name": "regantt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A React Gantt Chart",
   "repository": {
     "type": "git",
@@ -23,11 +23,9 @@
     "src"
   ],
   "scripts": {
-    "prepublishOnly": "npm run release",
-    "release": "NODE_ENV=production npm run build",
-    "build": "webpack --config config/webpack.config.js",
-    "build:docs": "webpack --config config/webpack.docs.config.js",
-    "watch": "webpack --watch --config config/webpack.config.js"
+    "build": "NODE_ENV=production webpack",
+    "watch": "webpack --watch",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -38,23 +36,33 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "jest": "^24.7.1",
+    "react": "^16.11.0",
     "standard": "^12.0.1",
-    "webpack": "^4.30.0",
+    "styled-components": "^4.4.0",
     "webpack-cli": "^3.3.0",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "webpack": "^4.30.0"
   },
   "peerDependencies": {
-    "react": "^16.6.3",
-    "styled-components": "^4.1.1"
-  },
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.2.0"
+    "react": ">= 16.11.0",
+    "styled-components": ">= 4.4.0"
   },
   "standard": {
-    "env": [
+    "enabled": true,
+    "autoFixOnSave": true,
+    "envs": [
       "jest"
+    ],
+    "validate": [
+      "javascript",
+      "javascriptreact",
+      {
+        "language": "html",
+        "autoFix": true
+      }
+    ],
+    "ignore": [
+      "node_modules/**"
     ]
   }
 }
