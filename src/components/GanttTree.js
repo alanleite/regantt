@@ -49,7 +49,8 @@ const GanttTree = ({
           <GanttTreeGroupHeader
             onClick={() => {
               onHeaderGroupClick(g.group)
-            }}>
+            }}
+          >
             {g.group}
           </GanttTreeGroupHeader>
           {g.data.map(({ tableData, data }, i) => (
@@ -60,7 +61,8 @@ const GanttTree = ({
                   style={{ width: tableFields.width || 150 }}
                   onClick={() => {
                     onHeaderTaskClick(data || null)
-                  }}>
+                  }}
+                >
                   {tableFields.name}
                 </GanttTreeGroupCol>
               ))}

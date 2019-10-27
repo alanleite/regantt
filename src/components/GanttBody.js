@@ -22,7 +22,8 @@ const GanttBody = ({
               <div
                 key={i}
                 className='header'
-                style={{ minWidth: month.size * 30 }}>
+                style={{ minWidth: month.size * 30 }}
+              >
                 {month.name}
               </div>
             ))}
@@ -50,7 +51,8 @@ const GanttBody = ({
                 className={task.class}
                 onClick={() => {
                   onTaskClick(task)
-                }} />
+                }}
+              />
             )
           })}
         </GanttBodyContent>

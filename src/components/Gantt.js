@@ -50,11 +50,13 @@ const Gantt = ({
       <GanttTree
         {...baseData}
         onHeaderGroupClick={onHeaderGroupClick}
-        onHeaderTaskClick={onHeaderTaskClick} />
+        onHeaderTaskClick={onHeaderTaskClick}
+      />
       <GanttBody
         {...baseData}
         tasks={tasks}
-        onTaskClick={onTaskClick} />
+        onTaskClick={onTaskClick}
+      />
     </GanttContent>
   )
 }

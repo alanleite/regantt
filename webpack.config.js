@@ -1,30 +1,26 @@
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
 
-const env = process.env.NODE_ENV || 'development'
-
 module.exports = {
+  devtool: 'hidden-source-map',
   entry: './src/index.js',
-  mode: env,
+  mode: process.env.NODE_ENV || 'development',
   output: {
-    library: '',
-    libraryTarget: 'commonjs',
-    path: path.resolve(__dirname, '../lib'),
-    filename: 'regantt.js'
+    path: path.resolve('./lib'),
+    filename: 'regantt.js',
+    libraryTarget: 'umd',
+    library: 'regantt'
   },
   module: {
     rules: [
       {
         test: /\.js|jsx?$/,
-        use: {
-          loader: 'babel-loader'
-        },
+        loader: 'babel-loader',
         exclude: /node_modules/
       }
     ]
   },
   resolve: {
-    mainFields: ['browser', 'main', 'module'],
     extensions: ['.js', '.jsx']
   },
   externals: [nodeExternals()]
