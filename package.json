@@ -24,7 +24,8 @@
   ],
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
