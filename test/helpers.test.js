@@ -57,7 +57,7 @@ test('Should distinct and sort by rows.group', () => {
 })
 
 test('Should create period props to help building UI', () => {
-  const groups = [ 'Group A', 'Group B', 'Group C' ]
+  const groups = ['Group A', 'Group B', 'Group C']
   const data = {
     from: '2020-05-01T10:00:00.000Z',
     to: '2020-08-20T10:00:00.000Z'
@@ -108,7 +108,7 @@ test('Should get css class for undefined task count', () => {
 })
 
 test('Make data', () => {
-  const groups = [ 'Group A', 'Group B', 'Group C' ]
+  const groups = ['Group A', 'Group B', 'Group C']
 
   const data = {
     from: '2020-05-01T10:00:00.000Z',
@@ -122,130 +122,171 @@ test('Make data', () => {
   }
 
   const columns = {
-    month: [ { name: 'May', size: 20 } ],
+    month: [{ name: 'May', size: 20 }],
     days: [
-      { day: 1,
+      {
+        day: 1,
         month: 4,
         year: 2020,
         wd: 5,
         date: '2020-05-01T10:00:00.000Z',
-        sd: 'Fri May 01 2020' },
-      { day: 2,
+        sd: 'Fri May 01 2020'
+      },
+      {
+        day: 2,
         month: 4,
         year: 2020,
         wd: 6,
         date: '2020-05-02T10:00:00.000Z',
-        sd: 'Sat May 02 2020' },
-      { day: 3,
+        sd: 'Sat May 02 2020'
+      },
+      {
+        day: 3,
         month: 4,
         year: 2020,
         wd: 0,
         date: '2020-05-03T10:00:00.000Z',
-        sd: 'Sun May 03 2020' },
-      { day: 4,
+        sd: 'Sun May 03 2020'
+      },
+      {
+        day: 4,
         month: 4,
         year: 2020,
         wd: 1,
         date: '2020-05-04T10:00:00.000Z',
-        sd: 'Mon May 04 2020' },
-      { day: 5,
+        sd: 'Mon May 04 2020'
+      },
+      {
+        day: 5,
         month: 4,
         year: 2020,
         wd: 2,
         date: '2020-05-05T10:00:00.000Z',
-        sd: 'Tue May 05 2020' },
-      { day: 6,
+        sd: 'Tue May 05 2020'
+      },
+      {
+        day: 6,
         month: 4,
         year: 2020,
         wd: 3,
         date: '2020-05-06T10:00:00.000Z',
-        sd: 'Wed May 06 2020' },
-      { day: 7,
+        sd: 'Wed May 06 2020'
+      },
+      {
+        day: 7,
         month: 4,
         year: 2020,
         wd: 4,
         date: '2020-05-07T10:00:00.000Z',
-        sd: 'Thu May 07 2020' },
-      { day: 8,
+        sd: 'Thu May 07 2020'
+      },
+      {
+        day: 8,
         month: 4,
         year: 2020,
         wd: 5,
         date: '2020-05-08T10:00:00.000Z',
-        sd: 'Fri May 08 2020' },
-      { day: 9,
+        sd: 'Fri May 08 2020'
+      },
+      {
+        day: 9,
         month: 4,
         year: 2020,
         wd: 6,
         date: '2020-05-09T10:00:00.000Z',
-        sd: 'Sat May 09 2020' },
-      { day: 10,
+        sd: 'Sat May 09 2020'
+      },
+      {
+        day: 10,
         month: 4,
         year: 2020,
         wd: 0,
         date: '2020-05-10T10:00:00.000Z',
-        sd: 'Sun May 10 2020' },
-      { day: 11,
+        sd: 'Sun May 10 2020'
+      },
+      {
+        day: 11,
         month: 4,
         year: 2020,
         wd: 1,
         date: '2020-05-11T10:00:00.000Z',
-        sd: 'Mon May 11 2020' },
-      { day: 12,
+        sd: 'Mon May 11 2020'
+      },
+      {
+        day: 12,
         month: 4,
         year: 2020,
         wd: 2,
         date: '2020-05-12T10:00:00.000Z',
-        sd: 'Tue May 12 2020' },
-      { day: 13,
+        sd: 'Tue May 12 2020'
+      },
+      {
+        day: 13,
         month: 4,
         year: 2020,
         wd: 3,
         date: '2020-05-13T10:00:00.000Z',
-        sd: 'Wed May 13 2020' },
-      { day: 14,
+        sd: 'Wed May 13 2020'
+      },
+      {
+        day: 14,
         month: 4,
         year: 2020,
         wd: 4,
         date: '2020-05-14T10:00:00.000Z',
-        sd: 'Thu May 14 2020' },
-      { day: 15,
+        sd: 'Thu May 14 2020'
+      },
+      {
+        day: 15,
         month: 4,
         year: 2020,
         wd: 5,
         date: '2020-05-15T10:00:00.000Z',
-        sd: 'Fri May 15 2020' },
-      { day: 16,
+        sd: 'Fri May 15 2020'
+      },
+      {
+        day: 16,
         month: 4,
         year: 2020,
         wd: 6,
         date: '2020-05-16T10:00:00.000Z',
-        sd: 'Sat May 16 2020' },
-      { day: 17,
+        sd: 'Sat May 16 2020'
+      },
+      {
+        day: 17,
         month: 4,
         year: 2020,
         wd: 0,
         date: '2020-05-17T10:00:00.000Z',
-        sd: 'Sun May 17 2020' },
-      { day: 18,
+        sd: 'Sun May 17 2020'
+      },
+      {
+        day: 18,
         month: 4,
         year: 2020,
         wd: 1,
         date: '2020-05-18T10:00:00.000Z',
-        sd: 'Mon May 18 2020' },
-      { day: 19,
+        sd: 'Mon May 18 2020'
+      },
+      {
+        day: 19,
         month: 4,
         year: 2020,
         wd: 2,
         date: '2020-05-19T10:00:00.000Z',
-        sd: 'Tue May 19 2020' },
-      { day: 20,
+        sd: 'Tue May 19 2020'
+      },
+      {
+        day: 20,
         month: 4,
         year: 2020,
         wd: 3,
         date: '2020-05-20T10:00:00.000Z',
-        sd: 'Wed May 20 2020' }
+        sd: 'Wed May 20 2020'
+      }
     ],
-    sign: { 'Fri May 01 2020': 0,
+    sign: {
+      'Fri May 01 2020': 0,
       'Sat May 02 2020': 1,
       'Sun May 03 2020': 2,
       'Mon May 04 2020': 3,
