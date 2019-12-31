@@ -103,11 +103,13 @@ export const makeData = (groups, columns, input) => {
       return p.tasks.map((t, it) => {
         const from = vDate(t.from)
         const to = vDate(t.to)
+        const limit = p.data.limite
         return Object.assign({}, t, {
           ix: columns.sign[from.sd],
           fx: columns.sign[to.sd],
           y: i,
           data: p.column,
+          limit,
           type: generateTaskClass(it, p.tasks.length)
         })
       })
