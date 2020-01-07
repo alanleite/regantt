@@ -46,6 +46,7 @@ const GanttBody = ({
                 type={task.type}
                 top={task.offsetY}
                 width={task.fx - task.ix}
+                limit={task.limit}
                 left={task.ix}
                 style={task.style}
                 className={task.class}
